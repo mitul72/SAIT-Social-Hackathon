@@ -59,7 +59,7 @@ export default function Chat() {
     // return data;
   }
   useEffect(() => {
-    setTimeout(() => {}, 1000);
+    setTimeout(() => {}, 2000);
     let dat = GetInterest();
   }, []);
   const WS_URL = "ws://saitface-a13849c8bb7c.herokuapp.com/ws";
