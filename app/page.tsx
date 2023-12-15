@@ -70,8 +70,6 @@ export default function Home() {
       w-[50vw]"
           style={{ border: "1px solid black", boxSizing: "border-box" }}
         />
-
-        <FontAwesomeIcon icon={faSearch} />
       </div>
       <ThreadsCompoent />
     </div>
