@@ -41,18 +41,21 @@ export default function Chat() {
       return await res.json();
     };
     let data = fetchData();
-
-    data.then((dat) => {
-      let temp = Array.from(dat.data);
-      const objectWithHighestId = temp.reduce(
-        (maxObject: any, currentObject: any) => {
-          return currentObject.id > maxObject.id ? currentObject : maxObject;
-        },
-        { id: -1 }
-      ); // Set an initial object with an ID lower than any possible ID
-      console.log(objectWithHighestId);
-      setData(objectWithHighestId);
-    });
+    try {
+      data.then((dat) => {
+        let temp = Array.from(dat.data);
+        const objectWithHighestId = temp.reduce(
+          (maxObject: any, currentObject: any) => {
+            return currentObject.id > maxObject.id ? currentObject : maxObject;
+          },
+          { id: -1 }
+        ); // Set an initial object with an ID lower than any possible ID
+        console.log(objectWithHighestId);
+        setData(objectWithHighestId);
+      });
+    } catch (e) {
+      console.error(e);
+    }
     // return data;
   }
   useEffect(() => {
